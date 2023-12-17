@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cockium</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <ul id="menu-horizontal">
+            <li><a href="register.html">Account</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="videos.html">Vídeos</a></li>
+            <li><a href="#">Jogos</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h1>Página de Vídeos</h1>
+        
+        <?php
+        session_start();
+        if (isset($_SESSION['username'])) {
+            echo '<button onclick="openVideoForm()">Enviar Vídeo</button>';
+            echo '<div id="videoPlayer" style="display: none;">';
+            echo '<video width="400" height="300" controls>
+                    <source src="video.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>';
+            echo '</div>';
+        } else {
+            echo '<p>Faça login para enviar vídeos e assistir!</p>';
+        }
+        ?>
+    </section>
+
+    <div id="videoForm" style="display: none;">
+        <form action="upload_video.php" method="post" enctype="multipart/form-data">
+            <label for="videoFile">Escolha um vídeo para enviar:</label>
+            <input type="file" id="videoFile" name="videoFile" accept="video/*" required>
+
+            <button type="submit">Enviar Vídeo</button>
+        </form>
+    </div>
+
+    <script>
+        function openVideoForm() {
+            document.getElementById("videoForm").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

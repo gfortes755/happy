@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    #menu-horizontal {
+      list-style-type: none;
+      padding: 0;
+      background-color: rgb(138, 196, 81);
+    }
+    #menu-horizontal li {
+      display: inline;
+    }
+    #menu-horizontal li a {
+      color: black;
+      padding: 20px;
+      display: inline-block;
+      text-decoration: none;
+      transition: .3s;
+    }
+    #menu-horizontal li a:hover {
+      background-color: azure;
+    }
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    section {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #333;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    label {
+      margin: 10px 0;
+      color: #555;
+    }
+    input {
+      padding: 10px;
+      margin-bottom: 15px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 15px;
+      background-color: rgb(138, 196, 81);
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #5cb85c;
+    }
+  </style>
+  <title>Login</title>
+</head>
+<body>
+  <nav>
+    <ul id="menu-horizontal">
+      <li><a href="#">Account</a></li>
+      <li><a href="#">videos</a></li>
+      <li><a href="#">games</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </nav>
+
+  <footer>
+    <section>
+      <h1>Login</h1>
+      <form action="login.php" method="post">
+        <label for="username">Name:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <p>&copy; 2023 Happy-Games</p>
+  </footer>
+</body>
+</html>
